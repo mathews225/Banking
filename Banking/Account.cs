@@ -32,7 +32,7 @@ namespace Banking {
           Console.WriteLine($"Balance: ${Balance}\n");
         }
       } else {
-        throw new InsignificantFundsException();
+        throw new InsignificantFundsException(Balance, amount);
       }
     }
 

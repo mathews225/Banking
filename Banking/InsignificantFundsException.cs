@@ -7,7 +7,17 @@ namespace Banking.Exceptions {
 
 
 	public class InsignificantFundsException : Exception {
-		
+
+		public double AcctBalance { get; set; }
+		public double WithdrawAmt { get; set; }
+
+		public InsignificantFundsException(double balance, double amount)
+			: base($"Current Balance is ${balance}, withdrawing ${amount}.\n") {
+			AcctBalance = balance;
+			WithdrawAmt = amount;
+		}
+
+
 		public InsignificantFundsException() 
 			: base() { }
 		public InsignificantFundsException(string Message) 

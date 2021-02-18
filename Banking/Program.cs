@@ -1,4 +1,5 @@
 ﻿using System;
+using Banking.Exceptions;
 
 namespace Banking {
     class Program {
@@ -8,7 +9,14 @@ namespace Banking {
         sav1.InterestRate = 0.13; // change interest rate
         sav1.Deposit(50);
         sav1.Withdraw(20);
+			try {
         sav1.Withdraw(50);
+
+			}
+			catch (InsignificantFundsException ifEx) {
+				Console.WriteLine(ifEx.Message);
+        return;
+			}
         sav1.Deposit(-10);
         sav1.Withdraw(-10);
         sav1.Deposit(70);
