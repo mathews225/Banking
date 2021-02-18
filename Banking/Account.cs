@@ -13,25 +13,25 @@ namespace Banking {
     public void Deposit(double amount) {
       if (amount > 0) {
         Balance += amount;
-        Console.WriteLine($"${amount} Deposit");
-        Console.WriteLine($"${Balance} Balance\n");
+        Console.WriteLine($"Deposit: ${amount}");
+        Console.WriteLine($"Balance: ${Balance}\n");
       } else {
-        Console.WriteLine("Amount must be greater than $0. Did you want to withdraw instead?");
+        Console.WriteLine("-- Deposit Denied --\nERROR: Negative Amount Entered\n");
       };
     }
 
     public void Withdraw(double amount) {
       if (amount > 0) {
         if (amount > Balance) {
-          Console.WriteLine($"Insufficient Funds\n");
+          Console.WriteLine($"-- Withdraw Denied --\nERROR: Insufficient Funds\n");
         }
         else {
           Balance -= amount;
-          Console.WriteLine($"${amount} Withdraw");
-          Console.WriteLine($"${Balance} Balance\n");
+          Console.WriteLine($"Withdraw: ${amount}");
+          Console.WriteLine($"Balance: ${Balance}\n");
         }
       } else {
-        Console.WriteLine("Amount must be greater than $0. Did you want to deposit instead?");
+        Console.WriteLine("-- Withdraw Denied --\nERROR: Negative Amount Entered\n");
       }
     }
 

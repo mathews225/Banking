@@ -4,7 +4,7 @@ namespace Banking {
     class Program {
         static void Main(string[] args) {
 
-        var sav1 = new SavingsComposition();
+        var sav1 = new SavingsInheritance();
         sav1.InterestRate = 0.13; // change interest rate
         sav1.Deposit(50);
         sav1.Withdraw(20);
@@ -12,9 +12,8 @@ namespace Banking {
         sav1.Deposit(-10);
         sav1.Withdraw(-10);
         sav1.Deposit(70);
-        Console.WriteLine($"Savings balance is {sav1.Balance}");
+        Console.WriteLine($"Savings balance is {sav1.Balance}\n");
         sav1.PayInterest(3);
-        Console.WriteLine($"Savings balance is {sav1.Balance}");
     
 
 
