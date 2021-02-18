@@ -3,14 +3,25 @@
 namespace Banking {
     class Program {
         static void Main(string[] args) {
-            var acct1 = new Account();
-            acct1.AcctNbr = "100";
-            acct1.Deposit(200);
-            acct1.Withdraw(30);
-            acct1.Withdraw(-200);
-            Console.WriteLine($"Current account balance is ${acct1.Balance}.");
+
+        var sav1 = new SavingsComposition();
+        sav1.InterestRate = 0.13; // change interest rate
+        sav1.Deposit(50);
+        sav1.Withdraw(20);
+        sav1.Withdraw(50);
+        sav1.Deposit(-10);
+        sav1.Withdraw(-10);
+        sav1.Deposit(70);
+        Console.WriteLine($"Savings balance is {sav1.Balance}");
+        sav1.PayInterest(3);
+        Console.WriteLine($"Savings balance is {sav1.Balance}");
+    
 
 
-        }
+
+
+
+
+    }
     }
 }
