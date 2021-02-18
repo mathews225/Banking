@@ -4,8 +4,6 @@ using System.Text;
 
 namespace Banking.Exceptions {
 
-
-
 	public class InsignificantFundsException : Exception {
 
 		public double AcctBalance { get; set; }
