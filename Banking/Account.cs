@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Banking.Exceptions;
 
 namespace Banking {
   class Account {
@@ -31,7 +32,7 @@ namespace Banking {
           Console.WriteLine($"Balance: ${Balance}\n");
         }
       } else {
-        Console.WriteLine("-- Withdraw Denied --\nERROR: Negative Amount Entered\n");
+        throw new InsignificantFundsException();
       }
     }
 
